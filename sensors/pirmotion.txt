@@ -1,0 +1,11 @@
+void PIRsensor() {
+  bool value = digitalRead(PIR);
+  if (value) {
+    Blynk.logEvent("pirmotion","WARNNG! Motion Detected!"); //Enter your Event Name
+    WidgetLED LED(V5);
+    LED.on();
+  } else {
+    WidgetLED LED(V5);
+    LED.off();
+  }  
+  }

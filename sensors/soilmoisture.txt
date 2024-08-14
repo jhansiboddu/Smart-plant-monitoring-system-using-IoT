@@ -1,0 +1,11 @@
+void soilMoistureSensor() {
+  int value = analogRead(soil);
+  value = map(value, 0, 1024, 0, 100);
+  value = (value - 100) * -1;
+
+  Blynk.virtualWrite(V3, value);
+  lcd.setCursor(0, 1);
+  lcd.print("S:");
+  lcd.print(value);
+  lcd.print(" ");
+}
